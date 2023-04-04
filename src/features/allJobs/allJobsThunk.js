@@ -23,6 +23,6 @@ export const showStatsThunk = async (_, thunkAPI) => {
     const resp = await customFetch.get("/jobs/stats", authHeader(thunkAPI));
     return resp.data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.response.data.msg);
+    return checkForUnauthorizedResponse(error, thunkAPI);
   }
 };
