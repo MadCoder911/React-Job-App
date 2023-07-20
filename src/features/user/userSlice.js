@@ -39,7 +39,7 @@ export const updateUser = createAsyncThunk(
 );
 export const clearStore = createAsyncThunk(
   "user/clearStore",
-  clearStoreThunk()
+  clearStoreThunk
 );
 
 const userSlice = createSlice({
